@@ -18,12 +18,10 @@ require('lazy').setup({
 
 	{ -- Highlight, edit, and navigate code
 		'nvim-treesitter/nvim-treesitter',
+		build = ":TSUpdate", -- kickstart.nvim used a `configure` function, which seemed to be triggring "All parcers..." message at startup.
    	 	dependencies = {
 		'nvim-treesitter/nvim-treesitter-textobjects',
    	 	},
-   	 config = function()
-   	   pcall(require('nvim-treesitter.install').update { with_sync = true })
-   	 end,
   },
 
   -- Colorschemes supporting treesiter
