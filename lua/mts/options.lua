@@ -50,9 +50,9 @@ vim.o.clipboard = "unnamedplus"
 -- Enable mouse mode
 vim.o.mouse = 'a'
 
--- Set leader key.
-vim.g.mapleader = '\'
-vim.g.maplocalleader = '\'
+-- Set leader key. '\\' is really '\' to escape the escape.
+vim.g.mapleader = '\\'
+vim.g.maplocalleader = '\\'
 
 -- Highlight on Yank - taken from nvim-lua/kickstart.nvim 
 -- See `:help vim.highlight.on_yank()`
