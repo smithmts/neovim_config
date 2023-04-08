@@ -1,3 +1,2 @@
-# Ignore compiled plugins.
-
 plugins/
+lazy-lock.json
