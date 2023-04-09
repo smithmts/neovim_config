@@ -16,18 +16,32 @@ vim.opt.rtp:prepend(lazypath)
 -- Begin installation of plugins
 require('lazy').setup({
 
-	{ -- Highlight, edit, and navigate code
+	{ -- Treesitter to highlight, edit, and navigate code
 		'nvim-treesitter/nvim-treesitter',
 		build = ":TSUpdate", -- kickstart.nvim used a `configure` function, which seemed to be triggring "All parcers..." message at startup.
    	 	dependencies = {
 		'nvim-treesitter/nvim-treesitter-textobjects',
    	 	},
-  },
+	},
 
-  -- Colorschemes supporting treesiter
-	'Abstract-IDE/Abstract-cs', -- adds 'abscs' 
-	'tomasiser/vim-code-dark', -- adds codedark, modeled after VS Code Dark+
-	'cpea2506/one_monokai.nvim', -- adds one_monokai
+	-- Colorscheme(s) supporting treesiter
  	'Mofiqul/adwaita.nvim',
-	}) --End plugin installs
+
+	{ -- LSP Configuration & Plugins
+		'neovim/nvim-lspconfig',
+		dependencies = {
+		-- Automatically install LSPs to stdpath for neovim
+		'williamboman/mason.nvim',
+		'williamboman/mason-lspconfig.nvim',
+
+		-- Useful status updates for LSP
+		-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+		{ 'j-hui/fidget.nvim', opts = {} },
+
+		-- Additional lua configuration, makes nvim stuff amazing!
+		'folke/neodev.nvim',
+		},
+	},
+
+}) --End plugin installs
 		vim.g.adwaita_darker = true -- darker theme version

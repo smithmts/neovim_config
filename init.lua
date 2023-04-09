@@ -6,4 +6,5 @@ vim.g.maplocalleader = '\\'
 require "mts.lazy"
 require "mts.options"
 require "mts.treesitter"
+require "mts.lsp_config"
 --require "mts.packer"
