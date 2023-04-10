@@ -43,5 +43,8 @@ require('lazy').setup({
 		},
 	},
 
+	-- which-key: Useful plugin to show you pending keybinds.
+	{ 'folke/which-key.nvim', opts = {} },
+
 }) --End plugin installs
 		vim.g.adwaita_darker = true -- darker theme version
